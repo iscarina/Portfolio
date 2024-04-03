@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face{
+  font-family :'Stretch';
+  src:url(../fonts/stretch/StretchPro.otf);
+}
+
+:root {
+  --color-secundario: #fe520b;
+}
+
+html, body { height: 100%;}
+
+body {
+  background-color: #000;
+  font-family: 'Stretch';
+  color: white;
+  margin-top: 80px; /* Asegura que el contenido no quede oculto detrás del header */
+  padding: 20px;
+}

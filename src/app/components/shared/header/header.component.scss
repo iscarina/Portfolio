@@ -1,0 +1,42 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  padding: 20px 0;
+  z-index: 1000;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  margin: 0;
+  color: white;
+  font-size: 23px;
+  display: inline-block;
+}
+
+.logo:hover{
+  cursor: pointer;
+}
+
+.logo-container {
+  flex-grow: 1; /* El contenedor del logotipo ocupará el espacio disponible */
+  text-align: center; /* Centra el logotipo */
+}
+
+.contact {
+  margin: 0;
+  color: white;
+  font-size: 23px;
+}
+
+.contact:hover{
+  cursor: pointer;
+}
