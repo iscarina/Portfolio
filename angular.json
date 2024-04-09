@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "PortfolioIsma:build:production"
+              "buildTarget": "PortfolioIsma:build:production"
             },
             "development": {
-              "browserTarget": "PortfolioIsma:build:development"
+              "buildTarget": "PortfolioIsma:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "PortfolioIsma:build"
+            "buildTarget": "PortfolioIsma:build"
           }
         },
         "test": {
@@ -96,6 +96,10 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
+              "./node_modules/@fortawesome/fontawesome-free/scss/regular.scss",
+              "./node_modules/@fortawesome/fontawesome-free/scss/solid.scss",
+              "./node_modules/@fortawesome/fontawesome-free/scss/brands.scss",
               "src/styles.scss"
             ],
             "scripts": []

@@ -4,8 +4,9 @@
   left: 0;
   width: 100%;
   background-color: transparent;
-  padding: 20px 0;
+  //padding: 20px 0;
   z-index: 1000;
+  margin: 0;
 }
 
 .container {
@@ -19,7 +20,6 @@
   margin: 0;
   color: white;
   font-size: 23px;
-  display: inline-block;
 }
 
 .logo:hover{
@@ -32,11 +32,28 @@
 }
 
 .contact {
-  margin: 0;
+  margin-right: 0;
   color: white;
   font-size: 23px;
+  position: relative;
+  display: inline-block;
+  margin-right: 0;
 }
 
 .contact:hover{
   cursor: pointer;
 }
+
+.line {
+  position: absolute;
+  bottom: 40%;
+  margin-left: 5px;
+  left: 100%; /* Inicialmente, colocamos la línea al lado derecho del texto */
+  width: 0; /* Ancho inicial de la línea */
+  height: 2px;
+  background-color: white;
+  transform-origin: left; /* Ajustamos el origen de la transformación */
+}
+ .letter{
+  color: var(--color-secundario);
+ }

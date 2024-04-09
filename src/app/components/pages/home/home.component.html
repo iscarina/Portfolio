@@ -1,3 +1,48 @@
 <div class="containerHome">
-  <div class="text-nombre"><p class="nombre">ISMAEL LUUKY</p></div>
+  <div class="text-nombre">
+    <div class="wtg">
+      <p class="nombre">ISMAEL <span class="alias">LUUKY</span></p>
+      <!-- <p class="nombre">
+        <span class="letter">I</span>
+        <span class="letter">S</span>
+        <span class="letter">M</span>
+        <span class="letter">A</span>
+        <span class="letter">E</span>
+        <span class="letter">L</span>
+        <span class="letter">&nbsp;</span>
+        <span class="letter alias">L</span>
+        <span class="letter alias">UU</span>
+        <span class="letter alias">K</span>
+        <span class="letter alias">Y</span>
+      </p> -->
+    </div>
+    <div class="botInf">
+      <p>ingeniero ____ programador</p>
+      <div class="boton" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+        <div class="conoceme">
+          <div class="text" (click)="goToConoceme()"><span>Coonóceme</span><i class="fas fa-solid fa-arrow-trend-up fa-xl"></i></div>
+          <div class="overlay"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="containerCircle" (mouseenter)="onMouseEnterCircle($event)" (mouseleave)="onMouseLeaveCircle()" (click)="goToProyects()">
+    <div id="circle">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+          <defs>
+              <path id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "/>
+          </defs>
+          <circle cx="150" cy="100" r="75" fill="none"/>
+          <g>
+              <use xlink:href="#circlePath" fill="none"/>
+              <text fill="white">
+                  <textPath xlink:href="#circlePath">// Prooyecctos // Prooyecctos</textPath>
+              </text>
+          </g>
+          <g transform="translate(115, 2)">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xodm="http://www.corel.com/coreldraw/odm/2003" xml:space="preserve" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 190 40" x="0px" y="0px"><g><polygon fill="white" points="26.02,5 26.1,13.66 34.41,13.64 26.16,18.97 26.27,27.62 21.09,22.26 5.59,35 17.9,18.97 12.7,13.64 21,13.66 "/></g></svg>
+          </g>
+      </svg>
+    </div>
+  </div>
 </div>
