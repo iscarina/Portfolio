@@ -1,10 +1,11 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
 import { Router } from '@angular/router';
 import { gsap } from 'gsap';
-import { SplitText } from "gsap-trial/dist/SplitText";
+//import { SplitText } from "gsap-trial/dist/SplitText";
+import { Power2 } from 'gsap';
 
 
-gsap.registerPlugin(SplitText);
+//gsap.registerPlugin(SplitText);
 
 @Component({
   selector: 'app-home',
@@ -16,16 +17,12 @@ export class HomeComponent implements OnInit{
   private tweens: { [key: string]: gsap.core.Tween } = {}; // Define tweens como una propiedad privada
 
   constructor(private _renderer: Renderer2, private elementRef: ElementRef, private router: Router){
+
   }
 
   ngOnInit(){
 
     this._renderer.setStyle(document.body, 'overflow', 'hidden');
-
-    const wtgs: HTMLElement[] = Array.from(document.querySelectorAll('.wtg'));
-    wtgs.forEach((wtg: HTMLElement) => {
-      new SplitText(wtg, { charsClass: "letter" });
-    });
 
     const letters: HTMLElement[] = Array.from(document.querySelectorAll(".letter"));
 
@@ -43,6 +40,24 @@ export class HomeComponent implements OnInit{
 
   ngOnDestroy(): void {
     this._renderer.removeStyle(document.body, 'overflow');
+  }
+
+  onName(){
+    gsap.timeline()
+    .to('.letter', {
+      duration: 0.5, // Duración del impulso inicial en segundos
+      y: -100, // Desplazamiento vertical hacia arriba
+      ease: "power2.out" // Easing para una animación más suave
+    })
+    .to('.letter', {
+      duration: 0.5, // Duración de la caída en segundos
+      y: 0, // Regresar a la posición original
+      ease: "elastic.out(1, 0.3)" // Easing elástico para simular la caída con efecto de rebote
+    });
+  }
+
+  onNameLeave(){
+
   }
 
   onMouseEnter() {
@@ -95,8 +110,7 @@ export class HomeComponent implements OnInit{
   }
 
   goToProyects(){
-
+    this.router.navigateByUrl('/proyectos');
   }
 
 }
-

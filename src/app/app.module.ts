@@ -10,6 +10,7 @@ import { Prueba1Component } from './components/pages/prueba1/prueba1.component';
 import { Prueba2Component } from './components/pages/prueba2/prueba2.component';
 import { Prueba3Component } from './components/pages/prueba3/prueba3.component';
 import { ConocemeComponent } from './components/pages/conoceme/conoceme.component';
+import { ProyectosComponent } from './components/pages/proyectos/proyectos.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ConocemeComponent } from './components/pages/conoceme/conoceme.componen
     Prueba2Component,
     Prueba3Component,
     ConocemeComponent,
+    ProyectosComponent,
   ],
   imports: [
     BrowserModule,

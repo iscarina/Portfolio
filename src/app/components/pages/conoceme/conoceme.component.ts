@@ -1,8 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import gsap from 'gsap';
-import { DrawSVGPlugin } from "gsap-trial/dist/DrawSVGPlugin";
+// import { DrawSVGPlugin } from "gsap-trial/dist/DrawSVGPlugin";
 
-gsap.registerPlugin(DrawSVGPlugin);
+// gsap.registerPlugin(DrawSVGPlugin);
 
 @Component({
   selector: 'app-conoceme',
@@ -17,18 +17,18 @@ export class ConocemeComponent implements OnInit {
 
   ngOnInit(): void {
     this.startScrollAnimation();
-    this.dibujaCara();
+    //this.dibujaCara();
   }
 
-  dibujaCara(){
-    const svg = this.elementRef.nativeElement.querySelector('.caraSVG');
+  // dibujaCara(){
+  //   const svg = this.elementRef.nativeElement.querySelector('.caraSVG');
 
-    const tl = gsap.timeline({ paused: true })
-      .from('.path2', { drawSVG: 0, ease: 'none'});
+  //   const tl = gsap.timeline({ paused: true })
+  //     .from('.path2', { drawSVG: 0, ease: 'none'});
 
-    svg.addEventListener('mouseenter', () => tl.play());
-    svg.addEventListener('mouseleave', () => tl.reverse());
-  }
+  //   svg.addEventListener('mouseenter', () => tl.play());
+  //   svg.addEventListener('mouseleave', () => tl.reverse());
+  // }
 
   startScrollAnimation(): void {
     const wrapper = document.querySelector(".wrapper");
