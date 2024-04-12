@@ -93,7 +93,6 @@ export class HomeComponent implements OnInit{
   }
 
   onMouseOver(event: MouseEvent) {
-    console.log(event);
     const trg: HTMLElement = event.target as HTMLElement;
 
     if (trg.dataset['tween']) {

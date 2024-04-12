@@ -2,6 +2,7 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/src/ScrollTrigger';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import { NONE_TYPE } from '@angular/compiler';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(MotionPathPlugin);
@@ -18,15 +19,17 @@ export class ProyectosComponent implements OnInit {
   ngOnInit(): void {
     //this._renderer.setStyle(document.body, 'overflow', 'hidden');
 
-        //this.createBox(window.innerWidth/2, window.innerHeight/2);
+    gsap.set(".a.name", { rotation: 0 });
 
     //Con timeLine encadeno .to que se ejecutan en cascada
     const tl1 = gsap.timeline()
     .to(".a.name", { //Esto es hacia lo que va el elemento
-      left: "-50vw"
+      left: "-50vw",
     })
     .to(".a.job", {
-      left: "-50vw"
+      left: "-50vw",
+      rotate: 30,
+      rotateX: 180
     })
     // .to(".a.socials", {
     //   duration: 4,
@@ -37,7 +40,7 @@ export class ProyectosComponent implements OnInit {
       animation: tl1,
       trigger: "#container",
       start: "top center ",
-      end: "+=10000",
+      end: "+=4000",
       scrub: true,
       pin: true,
     });
