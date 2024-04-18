@@ -1,74 +1,158 @@
-<div class="main">
+<div class="main neo">
+  <div id="dvd"></div>
   <div class="imDesc">
-    <div class="imagenPerfil">
+    <div class="box2d imagenPerfil">
       <img class="imagenIsmael" src="assets/images/perfilImg.png">
-      <!-- <svg class="caraSVG" width="50%" height="50%" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g id="group2">
-          <path class="path2" d="m64,2C29.81,2,2,29.81,2,64s27.81,62,62,62,62-27.81,62-62S98.19,2,64,2Zm0,120c-31.98,0-58-26.02-58-58S32.02,6,64,6s58,26.02,58,58-26.02,58-58,58Z"/>
-          <path class="path2" d="m107,62c-1.1,0-2,.9-2,2,0,22.61-18.39,41-41,41s-41-18.39-41-41c0-1.1-.9-2-2-2s-2,.9-2,2c0,24.81,20.19,45,45,45s45-20.19,45-45c0-1.1-.9-2-2-2Z"/>
-          <path class="path2" d="m25.4,48c5.62,1.77,8.45,2.66,9.93,4.63,1.58,2.11,2.27,5.99,3.63,13.72.17.96,1,1.65,1.97,1.65h.13c.97,0,1.8-.7,1.97-1.65,1.37-7.73,2.05-11.61,3.63-13.72,1.48-1.97,4.3-2.86,9.93-4.63.83-.26,1.4-1.03,1.4-1.91v-.18c0-.87-.57-1.65-1.4-1.91-5.62-1.77-8.45-2.66-9.93-4.63-1.58-2.11-2.27-5.99-3.63-13.72-.17-.96-1-1.65-1.97-1.65h-.13c-.97,0-1.8.7-1.97,1.65-1.37,7.73-2.05,11.61-3.63,13.72-1.48,1.97-4.3,2.86-9.93,4.63-.83.26-1.4,1.03-1.4,1.91v.18c0,.87.57,1.65,1.4,1.91Zm15.6-12.11c1.56,6.08,3.5,8.06,8.95,10.12-5.46,2.05-7.39,4.04-8.95,10.12-1.56-6.08-3.5-8.06-8.95-10.12,5.46-2.05,7.39-4.04,8.95-10.12Z"/>
-          <path class="path2" d="m71.4,48c5.62,1.77,8.45,2.66,9.93,4.63,1.58,2.11,2.27,5.99,3.63,13.72.17.96,1,1.65,1.97,1.65h.13c.97,0,1.8-.7,1.97-1.65,1.37-7.73,2.05-11.61,3.63-13.72,1.48-1.97,4.3-2.86,9.93-4.63.83-.26,1.4-1.03,1.4-1.91v-.18c0-.87-.57-1.65-1.4-1.91-5.62-1.77-8.45-2.66-9.93-4.63-1.58-2.11-2.27-5.99-3.63-13.72-.17-.96-1-1.65-1.97-1.65h-.13c-.97,0-1.8.7-1.97,1.65-1.37,7.73-2.05,11.61-3.63,13.72-1.48,1.97-4.3,2.86-9.93,4.63-.83.26-1.4,1.03-1.4,1.91v.18c0,.87.57,1.65,1.4,1.91Zm15.6-12.11c1.56,6.08,3.5,8.06,8.95,10.12-5.46,2.05-7.39,4.04-8.95,10.12-1.56-6.08-3.5-8.06-8.95-10.12,5.46-2.05,7.39-4.04,8.95-10.12Z"/>
-        </g>
-        <use href="#group2" class="invisible" stroke="var(--color-secundario)" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg> -->
+      <div class="tooltip-container">
+        <span class="tooltip-text">Disponible para trabajar</span>
+       </div>
     </div>
-    <div class="descripcion">
+    <div (mouseenter)="arrowDie()" class="arrow">
+      <i class="fas fa-solid fa-angles-down"></i>
+    </div>
+    <div class="descripcion" >
       <div class="d1">
-        <p><span class="letra-grande">E</span>y!, sooy Ismael Cariñanos Sáenz de Jubera.</p>
+        <p><span class="letra-grande">E</span>y!, soy <u>Ismael</u> Cariñanos Sáenz de Jubera.</p>
+      </div>
+      <div class="d1">
+        <!-- Un Ingeniero Informático graduado en la Universidad de La Rioja. Mi pasión por la programación y el desarrollo web me ha llevado a destacar
+          por mi enfoque creativo y constante. <br>Siempre busco oportunidades para integrarme en equipos donde pueda aplicar y mejorar mis habilidades, así
+          como adquirir nuevas competencias. <br>Además de mi experiencia en proyectos web, también me aventuro en el emocionante ámbito de la programación orientada
+          al desarrollo de videojuegos. La posibilidad de crear mundos interactivos y experiencias envolventes despierta mi creatividad y me impulsa a explorar nuevas
+          técnicas y tecnologías. -->
+        <p>Un <u>Ingeniero Informático</u> graduado en la Universidad de La Rioja.<br> Mi pasión por la <u>programación</u> y el desarrollo web me ha llevado a destacar
+          por mi enfoque <u>creativo y constante</u>.</p>
+      </div>
+      <div class="d1">
+        <p>Siempre busco oportunidades para integrarme en equipos donde pueda aplicar y mejorar mis <u>habilidades</u>, así
+          como adquirir <u>nuevas competencias</u>.</p>
+      </div>
+      <div class="d1">
+        <p>Además de mi experiencia en proyectos web, también me aventuro en el emocionante ámbito de la programación orientada
+          al <u>desarrollo de videojuegos</u>. La posibilidad de crear mundos interactivos y experiencias envolventes despierta mi creatividad y me impulsa a explorar
+          <u>nuevas técnicas y tecnologías.</u></p>
+      </div>
+      <!-- <div class="d1">
+        <p><span class="letra-grande">E</span>y!, soy Ismael Cariñanos Sáenz de Jubera.</p>
       </div>
       <div class="d2">
-        <p><span class="letra-grande">UU</span>n Ingeniero Informático apasionado por la programmación y el desarrollo web.</p>
+        <p>Ingeniero Informático graduado en la Universidad de La Rioja, apasionado por la programación y el desarrollo web.</p>
       </div>
+      <div class="d3">
+        <p>Destaco por mi enfoque creativo y constante.</p>
+      </div>
+      <div class="d4">
+        <p>Busco integrarme en un equipo donde pueda aplicar y mejorar mis habilidades, así
+          como adquirir nuevas competencias.
+        </p>
+      </div> -->
     </div>
   </div>
-  <div class="marquee">
+
+  <div style="font-family: 'Stretch';" class="marquee">
     <div class="item i">
       Ismael
     </div>
     <div class="item">
-      <img class="iconoLuky" src="../../../../assets/images/iconoLuky.png" alt="">
+      <img class="iconoLuky" src="assets/images/iconoLuky.png" alt="">
     </div>
     <div class="item" style="color:var(--color-secundario);">
       Luuky
     </div>
     <div class="item">
-      <img class="iconoLuky" src="../../../../assets/images/iconoLuky.png" alt="">
+      <img class="iconoLuky" src="assets/images/iconoLuky.png" alt="">
     </div>
     <div class="item i">
       Ismael
     </div>
     <div class="item">
-      <img class="iconoLuky" src="../../../../assets/images/iconoLuky.png" alt="">
+      <img class="iconoLuky" src="assets/images/iconoLuky.png" alt="">
     </div>
     <div class="item" style="color:var(--color-secundario);">
       Luuky
     </div>
     <div class="item">
-      <img class="iconoLuky" src="../../../../assets/images/iconoLuky.png" alt="">
+      <img class="iconoLuky" src="assets/images/iconoLuky.png" alt="">
     </div>
     <div class="item i">
       Ismael
     </div>
     <div class="item">
-      <img class="iconoLuky" src="../../../../assets/images/iconoLuky.png" alt="">
+      <img class="iconoLuky" src="assets/images/iconoLuky.png" alt="">
     </div>
     <div class="item" style="color:var(--color-secundario);">
       Luuky
     </div>
     <div class="item">
-      <img class="iconoLuky" src="../../../../assets/images/iconoLuky.png" alt="">
+      <img class="iconoLuky" src="assets/images/iconoLuky.png" alt="">
     </div>
     <div class="item i">
       Ismael
     </div>
     <div class="item">
-      <img class="iconoLuky" src="../../../../assets/images/iconoLuky.png" alt="">
+      <img class="iconoLuky" src="assets/images/iconoLuky.png" alt="">
     </div>
     <div class="item" style="color:var(--color-secundario);">
       Luuky
     </div>
     <div class="item">
-      <img class="iconoLuky" src="../../../../assets/images/iconoLuky.png" alt="">
+      <img class="iconoLuky" src="assets/images/iconoLuky.png" alt="">
     </div>
+  </div>
+
+  <div style="font-family: 'Stretch';" class="marquee a2">
+    <div class="item i">
+      Ismael
+    </div>
+    <div class="item">
+      <img class="iconoLuky" src="assets/images/iconoLuky.png" alt="">
+    </div>
+    <div class="item" style="color:var(--color-secundario);">
+      Luuky
+    </div>
+    <div class="item">
+      <img class="iconoLuky" src="assets/images/iconoLuky.png" alt="">
+    </div>
+    <div class="item i">
+      Ismael
+    </div>
+    <div class="item">
+      <img class="iconoLuky" src="assets/images/iconoLuky.png" alt="">
+    </div>
+    <div class="item" style="color:var(--color-secundario);">
+      Luuky
+    </div>
+    <div class="item">
+      <img class="iconoLuky" src="assets/images/iconoLuky.png" alt="">
+    </div>
+    <div class="item i">
+      Ismael
+    </div>
+    <div class="item">
+      <img class="iconoLuky" src="assets/images/iconoLuky.png" alt="">
+    </div>
+    <div class="item" style="color:var(--color-secundario);">
+      Luuky
+    </div>
+    <div class="item">
+      <img class="iconoLuky" src="assets/images/iconoLuky.png" alt="">
+    </div>
+    <div class="item i">
+      Ismael
+    </div>
+    <div class="item">
+      <img class="iconoLuky" src="assets/images/iconoLuky.png" alt="">
+    </div>
+    <div class="item" style="color:var(--color-secundario);">
+      Luuky
+    </div>
+    <div class="item">
+      <img class="iconoLuky" src="assets/images/iconoLuky.png" alt="">
+    </div>
+  </div>
+
+  <div class="mis aptitudes">
+    <p style="font-family: 'Stretch';">AAptitudes Tecnoológicas</p>
+    <p>Proximamente...</p>
   </div>
 </div>

@@ -17,7 +17,7 @@
 
   height: 700px;
   width: 1500px;
-  background-color: #ffffff;
+  background-color: var(--color-blanco);
   justify-content: center;
   text-align: center;
   font-size: 100px;
@@ -112,7 +112,7 @@
   padding: 15px 0;
   background-color: var(--color-secundario);
   box-shadow: 0 5px 10px rgba(0,0,0,.1);
-  color: #fff;
+  color: var(--color-blanco);
   font-size: 18px;
   text-transform: uppercase;
   text-align: center;
@@ -161,7 +161,7 @@
   padding: 15px 0;
   background-color: var(--color-principal);
   box-shadow: 0 5px 10px rgba(0,0,0,.1);
-  color: #fff;
+  color: var(--color-blanco);
   font-size: 18px;
   text-transform: uppercase;
   text-align: center;
@@ -190,4 +190,3 @@
 .rb5 span{
   width: -2500px;
 }
-

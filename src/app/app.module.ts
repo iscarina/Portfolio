@@ -11,6 +11,7 @@ import { Prueba2Component } from './components/pages/prueba2/prueba2.component';
 import { Prueba3Component } from './components/pages/prueba3/prueba3.component';
 import { ConocemeComponent } from './components/pages/conoceme/conoceme.component';
 import { ProyectosComponent } from './components/pages/proyectos/proyectos.component';
+import { PreLoaderComponent } from './components/shared/pre-loader/pre-loader.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ProyectosComponent } from './components/pages/proyectos/proyectos.compo
     Prueba3Component,
     ConocemeComponent,
     ProyectosComponent,
+    PreLoaderComponent,
   ],
   imports: [
     BrowserModule,

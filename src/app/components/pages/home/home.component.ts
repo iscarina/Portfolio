@@ -22,6 +22,8 @@ export class HomeComponent implements OnInit{
 
   ngOnInit(){
 
+    window.scrollTo(0, 0);
+
     this._renderer.setStyle(document.body, 'overflow', 'hidden');
 
     const letters: HTMLElement[] = Array.from(document.querySelectorAll(".letter"));
@@ -62,14 +64,14 @@ export class HomeComponent implements OnInit{
 
   onMouseEnter() {
     gsap.to('.overlay', { duration: 0.5, ease: 'power2.out', width: '100%', left: '0%', right: 'auto' });
-    gsap.to('.text', { duration: 0.5, ease: 'power2.out', color: 'white' });
-    gsap.to('.conoceme', { duration: 0.5, ease: 'power2.out', border: '1px solid white'});
+    gsap.to('.text', { duration: 0.5, ease: 'power2.out', color: 'var(--color-blanco)' });
+    gsap.to('.conoceme', { duration: 0.5, ease: 'power2.out', border: '1px solid var(--color-blanco)'});
     gsap.to('.fas', {duration: 0.7, rotate: 360});
   }
 
   onMouseLeave() {
     gsap.to('.overlay', { duration: 0.5, ease: 'power2.out', width: '0%', left: 'auto', right: '0%' });
-    gsap.to('.text', { duration: 0.5, ease: 'power2.out', color: 'black' });
+    gsap.to('.text', { duration: 0.5, ease: 'power2.out', color: 'var(--color-principal)' });
     gsap.to('.conoceme', { duration: 0.5, ease: 'power2.out', border: 'none'});
     gsap.to('.fas', {duration: 0.7, rotate: 0});
   }

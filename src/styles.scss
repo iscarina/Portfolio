@@ -3,13 +3,32 @@
 @import '../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
 @import '../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.montserrat-custom {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 @font-face{
   font-family :'Stretch';
   src:url(../fonts/stretch/StretchPro.otf);
 }
 
+@font-face{
+  font-family :'Neo';
+  src:url(../fonts/stretch/Y2K_neophyte.ttf);
+}
+
+.neo{
+  font-family: 'Neo';
+}
+
 :root {
   --color-principal: #111111;
+  --color-blanco: white;
   --color-secundario: #fe520b;
 }
 
@@ -18,12 +37,12 @@ html, body { height: 100%;}
 body {
   //background-color: #000;
   font-family: 'Stretch';
-  color: white;
+  color: var(--color-blanco);
   //margin-top: 80px; /* Asegura que el contenido no quede oculto detrás del header */
   padding: 20px;
 }
 body {
-  background-color: #111111;
+  background-color: var(--color-principal);
   margin: 0;
   overflow-x: hidden;
 }
@@ -64,6 +83,6 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: white;
+  background: var(--color-blanco);
   border-radius: 55px;
 }

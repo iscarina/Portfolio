@@ -1,0 +1,29 @@
+.overlay{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  display: flex;
+  margin-top: -20px;
+  margin-left: -20px;
+}
+
+.bar{
+  width: 10vw;
+  height: 105vh;
+  background: var(--color-principal);
+}
+
+.counter{
+  position: fixed;
+  width: 90%;
+  height: 80%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: 1000;
+  color: var(--color-blanco);
+  padding: 0.2em 0.4em;
+  font-size: 10vw;
+  font-family: 'Stretch';
+}

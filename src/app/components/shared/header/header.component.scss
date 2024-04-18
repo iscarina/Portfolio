@@ -5,7 +5,7 @@
   width: 100%;
   background-color: transparent;
   //padding: 20px 0;
-  z-index: 1000;
+  z-index: 2;
   margin: 0;
 }
 
@@ -18,7 +18,7 @@
 
 .logo {
   margin: 0;
-  color: white;
+  color: var(--color-blanco);
   font-size: 23px;
 }
 
@@ -33,7 +33,7 @@
 
 .contact {
   margin-right: 0;
-  color: white;
+  color: var(--color-blanco);
   font-size: 23px;
   position: relative;
   display: inline-block;
@@ -51,7 +51,7 @@
   left: 100%; /* Inicialmente, colocamos la línea al lado derecho del texto */
   width: 0; /* Ancho inicial de la línea */
   height: 2px;
-  background-color: white;
+  background-color: var(--color-blanco);
   transform-origin: left; /* Ajustamos el origen de la transformación */
 }
  .letter{

@@ -1,8 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import gsap from 'gsap';
-// import { DrawSVGPlugin } from "gsap-trial/dist/DrawSVGPlugin";
+import ScrollTrigger from 'gsap/src/ScrollTrigger';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 
-// gsap.registerPlugin(DrawSVGPlugin);
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(MotionPathPlugin);
 
 @Component({
   selector: 'app-conoceme',
@@ -16,20 +18,150 @@ export class ConocemeComponent implements OnInit {
   constructor(private elementRef: ElementRef) { }
 
   ngOnInit(): void {
+
+    gsap.set('.a2',{
+      rotate:90,
+    })
+
     this.startScrollAnimation();
-    //this.dibujaCara();
+
+    this.descAnim();
+
+    this.arrowAnim();
+
+    this.DVDEffect();
+
   }
 
-  // dibujaCara(){
-  //   const svg = this.elementRef.nativeElement.querySelector('.caraSVG');
+  //DVDEffect
+  DVDEffect(){
+    let x = 0;
+    let y = 0;
+    let dirX = 1;
+    let dirY = 1;
+    const speed = 1.6;
+    const pallete = ["#ff8800", "#e124ff", "#6a19ff", "#ff2188"];
+    let dvd = document.getElementById("dvd");
+    dvd!.style.backgroundColor = pallete[0];
+    let prevColorChoiceIndex = 0;
+    const dvdWidth = dvd!.clientWidth;
+    const dvdHeight = dvd!.clientHeight;
 
-  //   const tl = gsap.timeline({ paused: true })
-  //     .from('.path2', { drawSVG: 0, ease: 'none'});
+    function getNewRandomColor() {
+      const currentPallete = [...pallete]
+      currentPallete.splice(prevColorChoiceIndex,1)
+      const colorChoiceIndex = Math.floor(Math.random() * currentPallete.length);
+      prevColorChoiceIndex = colorChoiceIndex<prevColorChoiceIndex?colorChoiceIndex:colorChoiceIndex+1;
+      const colorChoice = currentPallete[colorChoiceIndex];
+      return colorChoice;
+    }
 
-  //   svg.addEventListener('mouseenter', () => tl.play());
-  //   svg.addEventListener('mouseleave', () => tl.reverse());
+    function animate() {
+      const windowHeight = window.innerHeight;
+      const windowWidth = window.innerWidth;
+      const scrollTop = window.scrollY;
+
+      if (y + dvdHeight >= windowHeight + scrollTop || y < scrollTop) {
+        dirY *= -1;
+        dvd!.style.backgroundColor = getNewRandomColor();
+      }
+      if (x + dvdWidth >= windowWidth || x < 0) {
+        dirX *= -1;
+        dvd!.style.backgroundColor = getNewRandomColor();
+      }
+      x += dirX * speed;
+      y += dirY * speed;
+      dvd!.style.left = x + "px";
+      dvd!.style.top = y + "px";
+      window.requestAnimationFrame(animate);
+    }
+
+    window.requestAnimationFrame(animate);
+  }
+  //DVDEffect
+  // DVDEffect(){
+  //   let x = 0;
+  //   let y = 0;
+  //   let dirX = 1;
+  //   let dirY = 1;
+  //   const speed = 1;
+  //   const pallete = ["#ff8800", "#e124ff", "#6a19ff", "#ff2188"];
+  //   let dvd = document.getElementById("dvd");
+  //   dvd!.style.backgroundColor = pallete[0];
+  //   let prevColorChoiceIndex = 0;
+  //   let black = document.getElementById("black");
+  //   const dvdWidth = dvd!.clientWidth;
+  //   const dvdHeight = dvd!.clientHeight;
+
+  //   function getNewRandomColor() {
+  //     const currentPallete = [...pallete]
+  //     currentPallete.splice(prevColorChoiceIndex,1)
+  //     const colorChoiceIndex = Math.floor(Math.random() * currentPallete.length);
+  //     prevColorChoiceIndex = colorChoiceIndex<prevColorChoiceIndex?colorChoiceIndex:colorChoiceIndex+1;
+  //     const colorChoice = currentPallete[colorChoiceIndex];
+  //     return colorChoice;
+  //   }
+
+  //   function animate() {
+  //     const screenHeight = document.body.clientHeight;
+  //     const screenWidth = document.body.clientWidth;
+
+  //     if (y + dvdHeight >= screenHeight || y < 0) {
+  //       dirY *= -1;
+  //       dvd!.style.backgroundColor = getNewRandomColor();
+  //     }
+  //     if (x + dvdWidth >= screenWidth || x < 0) {
+  //       dirX *= -1;
+  //       dvd!.style.backgroundColor = getNewRandomColor();
+  //     }
+  //     x += dirX * speed;
+  //     y += dirY * speed;
+  //     dvd!.style.left = x + "px";
+  //     dvd!.style.top = y + "px";
+  //     window.requestAnimationFrame(animate);
+  //   }
+
+  //   window.requestAnimationFrame(animate);
   // }
 
+  //Descripcion
+  descAnim(){
+
+    const sections = this.elementRef.nativeElement.querySelectorAll('.descripcion > div');
+
+    sections.forEach((section: any, index:any) => {
+      gsap.set(section, { x: '100%', opacity: 0 }); // Oculta todos los párrafos al inicio, desplazándolos hacia la derecha
+      gsap.to(section, {
+        opacity: 1,
+        x: '0%', // Desplaza los nuevos párrafos desde la derecha hasta su posición original
+        scrollTrigger: {
+          trigger: section,
+          start: 'top center', // Inicia la animación cuando el párrafo está en el centro de la vista
+          toggleActions: 'play none none reverse'
+        }
+      });
+    });
+
+  }
+
+  //Flecha bajar
+  arrowAnim(){
+
+    gsap.to(".fas",{
+      y: -20,
+      repeat:Infinity,
+      yoyo: true,
+    });
+
+  }
+
+  arrowDie(){
+    gsap.to(".fas",{
+      yPercent: 1000, yoyo: true, duration: 3, opacity: 0
+    });
+  }
+
+  //Marquee
   startScrollAnimation(): void {
     const wrapper = document.querySelector(".wrapper");
     const items = gsap.utils.toArray(".item");
