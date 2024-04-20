@@ -1,0 +1,31 @@
+.skill {
+  margin-bottom: 20px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.technology {
+  font-weight: bold;
+}
+
+.progress-bar {
+  background-color: var(--color-blanco);
+  height: 20px;
+  width: 100px;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+.progress {
+  background-color: var(--color-secundario);
+  height: 100%;
+  border-radius: 10px;
+}
+
+.nombre {
+  visibility: hidden;
+  font-size: 25px;
+}

@@ -29,4 +29,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('');
   }
 
+  goToContacto(){
+    this.router.navigateByUrl('contacto');
+  }
+
 }

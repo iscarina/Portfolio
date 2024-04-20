@@ -12,6 +12,8 @@ import { Prueba3Component } from './components/pages/prueba3/prueba3.component';
 import { ConocemeComponent } from './components/pages/conoceme/conoceme.component';
 import { ProyectosComponent } from './components/pages/proyectos/proyectos.component';
 import { PreLoaderComponent } from './components/shared/pre-loader/pre-loader.component';
+import { IconosTecnoComponent } from './components/shared/iconos-tecno/iconos-tecno.component';
+import { ContactoComponent } from './components/pages/contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { PreLoaderComponent } from './components/shared/pre-loader/pre-loader.co
     ConocemeComponent,
     ProyectosComponent,
     PreLoaderComponent,
+    IconosTecnoComponent,
+    ContactoComponent,
   ],
   imports: [
     BrowserModule,

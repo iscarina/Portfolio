@@ -1,0 +1,9 @@
+<div class="skill">
+  <span class="nombre">{{this.nombre}}</span>
+  <div class="technology" #iconContainer (mouseenter)="skillHover(iconContainer)" (mouseleave)="skilLeave(iconContainer)">
+    <i class="{{this.tecnologia}}"></i>
+  </div>
+  <div class="progress-bar">
+    <div class="progress" [style.width.%]="this.nivel"></div>
+  </div>
+</div>

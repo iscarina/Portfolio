@@ -36,11 +36,6 @@
   overflow: hidden;
 }
 
-.a2{
-  margin-left: -1837px;
-  z-index: -1;
-}
-
 .iconoLuky{
   width: 130px;
   height: 50px;
@@ -129,4 +124,10 @@
   background-size: 75px;
   background-position: center;
   z-index: 3;
+}
+
+.tecnologias{
+  display: flex;
+  //gap: 25px;
+  justify-content: space-evenly;
 }

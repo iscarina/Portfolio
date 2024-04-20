@@ -27,7 +27,7 @@ export class Prueba2Component {
     .addLabel("toRed") //Los labels para al hacer tl1.seek("toRed"); empieze ahi la animacion
     .to(".box", {
 
-      background: "red"
+      background: "red",
     })
     .addLabel("fadeOut")
     .to(".box", {
