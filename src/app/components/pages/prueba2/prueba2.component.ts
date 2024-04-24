@@ -1,4 +1,5 @@
 import { Component, ElementRef, Renderer2 } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import gsap, {Power2} from 'gsap';
 
 @Component({
@@ -8,9 +9,29 @@ import gsap, {Power2} from 'gsap';
 })
 export class Prueba2Component {
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
+  checkoutForm: any;
+
+  constructor(private elementRef: ElementRef, private renderer: Renderer2,private _renderer: Renderer2, private formBuilder: FormBuilder) {
+
+  }
+
+  onSubmit(event: Event) {
+    event.preventDefault();
+    if(this.checkoutForm.valid){
+      console.log(this.checkoutForm.value);
+    }
+    else{
+      console.log("Rellena todos los campos");
+    }
+  }
 
   ngOnInit(): void {
+
+    this.checkoutForm = this.formBuilder.group({
+      nombre: ['', Validators.required],
+      email: ['', Validators.required],
+      mensaje: ['', Validators.required]
+    });
 
     this.createBox(window.innerWidth/2, window.innerHeight/2);
 

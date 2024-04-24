@@ -128,6 +128,23 @@
 
 .tecnologias{
   display: flex;
-  //gap: 25px;
+  gap: 25px;
   justify-content: space-evenly;
+  p{
+    font-size: 30px;
+  }
+}
+
+.lenguajes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cl1, .cl2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Espacio entre los iconos */
+  margin-bottom: 40px;
 }

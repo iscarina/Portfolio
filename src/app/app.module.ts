@@ -14,6 +14,7 @@ import { ProyectosComponent } from './components/pages/proyectos/proyectos.compo
 import { PreLoaderComponent } from './components/shared/pre-loader/pre-loader.component';
 import { IconosTecnoComponent } from './components/shared/iconos-tecno/iconos-tecno.component';
 import { ContactoComponent } from './components/pages/contacto/contacto.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,10 +30,12 @@ import { ContactoComponent } from './components/pages/contacto/contacto.componen
     PreLoaderComponent,
     IconosTecnoComponent,
     ContactoComponent,
-  ],
+    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ],
   providers: [],

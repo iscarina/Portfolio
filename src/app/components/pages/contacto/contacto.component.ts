@@ -1,5 +1,5 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { gsap } from 'gsap';
 
 @Component({
@@ -13,9 +13,9 @@ export class ContactoComponent implements OnInit {
 
   constructor(private _renderer: Renderer2, private formBuilder: FormBuilder) {
     this.checkoutForm = this.formBuilder.group({
-      nombre: '',
-      email: '',
-      mensaje: ''
+      nombre: ['', Validators.required],
+      email: ['', Validators.required],
+      mensaje: ['', Validators.required]
     });
   }
 
@@ -23,10 +23,52 @@ export class ContactoComponent implements OnInit {
     this._renderer.setStyle(document.body, 'overflow', 'hidden');
   }
 
-  onSubmit(info: any[]) {
-    this.checkoutForm.reset();
+  onSubmit(event: Event) {
+    event.preventDefault();
+    if(this.checkoutForm.valid){
+      console.log(this.checkoutForm.value);
+    }
+    else{
+      console.log("Rellena todos los campos");
+    }
+  }
 
-    console.log(info);
+  gotoLinkedin(){
+    window.open("https://www.linkedin.com/in/ismael-cari%C3%B1anos-s%C3%A1enz-de-jubera-b23673233/?locale=en_US");
+  }
+
+  enterLink(){
+    gsap.to(".iconLinkedin",{
+      color: "#fe520b",
+      cursor: "pointer",
+      zoom: 1.1
+    });
+  }
+
+  leaveLink(){
+    gsap.to(".iconLinkedin",{
+      color: "var(--color-blanco)",
+      zoom: 1,
+    });
+  }
+
+  enterEnvio(){
+    gsap.to(".botonEnvio",{
+      rotate: 3,
+      backgroundColor: "var(--color-blanco)",
+      border:"2px solid #fe520b",
+      color: "var(--color-principal)",
+      cursor: "pointer"
+    });
+  }
+
+  leaveEnvio(){
+    gsap.to(".botonEnvio",{
+      rotate: 0,
+      backgroundColor: "#fe520b",
+      border:"2px solid var(--color-blanco)",
+      color: "var(--color-blanco)",
+    });
   }
 
 }

@@ -1,30 +1,36 @@
-<div class="contacto">
+<div class="contacto neo">
   <div class="formulario">
-    <form [formGroup]="checkoutForm" action="">
+    <form [formGroup]="checkoutForm" (submit)="onSubmit($event)">
       <div class="nombre">
-        <label for="nombre">
+        <!-- <label for="nombre">
           Nombre de empresa, o personal
-        </label>
+        </label> -->
         <input id="nombre" type="text" formControlName="nombre" placeholder="Nombre de empresa, o personal">
       </div>
       <div class="email">
-        <label for="email">
+        <!-- <label for="email">
           Email válido
-        </label>
+        </label> -->
         <input id="email" type="text" formControlName="email" placeholder="Email válido">
       </div>
       <div class="mensaje">
-        <label for="mensaje">
+        <!-- <label for="mensaje">
           Mensaje
-        </label>
+        </label> -->
         <textarea id="mensaje" type="textarea" formControlName="mensaje" placeholder="Mensaje"></textarea>
+      </div>
+      <div class="botLink">
+        <button type="submit" (mouseenter)="enterEnvio()" (mouseleave)="leaveEnvio()" class="botonEnvio">Enviar</button>
+        <div class="linke" (mouseenter)="enterLink()" (mouseleave)="leaveLink()">
+          <i  (click)="gotoLinkedin()" class="iconLinkedin devicon-linkedin-plain-wordmark"></i>
+        </div>
       </div>
     </form>
   </div>
   <div class="texto">
     <p style="margin-bottom: -50px;">¡ Para cualquier consulta !</p>
-    <p class="titulo">CooNTACTAME</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum officiis voluptatum id facilis mollitia dolores in odio debitis fugiat ut, ipsum consequuntur, architecto deserunt vero error exercitationem excepturi obcaecati rem.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A id dolore numquam esse. Unde explicabo labore sed qui omnis, perspiciatis natus, vitae maiores hic magni deleniti odit illum? Ducimus, perferendis.</p>
+    <p class="titulo">CooNTÁCTAME</p>
+    <p>¡Hola! Soy <u>Ismael Cariñanos Sáenz de Jubera</u>, un apasionado <u>Ingeniero Informático</u> con experiencia en el desarrollo web y programación en general. Estoy siempre buscando <u>nuevas oportunidades</u> emocionantes para contribuir con mi experiencia y habilidades en proyectos innovadores.</p>
+    <p>Si estás <u>interesado</u> en colaborar conmigo, ya sea para un proyecto, una oportunidad de trabajo o simplemente para charlar sobre tecnología, <u>no dudes en contactarme</u>.</p>
   </div>
 </div>

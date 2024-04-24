@@ -1,0 +1,6 @@
+<form [formGroup]="checkoutForm" (submit)="onSubmit($event)">
+  <input id="nombre" type="text" formControlName="nombre" placeholder="Nombre de empresa, o personal">
+  <input id="email" type="text" formControlName="email" placeholder="Email válido">
+  <textarea id="mensaje" type="textarea" formControlName="mensaje" placeholder="Mensaje"></textarea>
+  <button type="submit" class="botonEnvio">Enviar</button>
+</form>
