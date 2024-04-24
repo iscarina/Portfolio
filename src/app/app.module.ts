@@ -15,6 +15,7 @@ import { PreLoaderComponent } from './components/shared/pre-loader/pre-loader.co
 import { IconosTecnoComponent } from './components/shared/iconos-tecno/iconos-tecno.component';
 import { ContactoComponent } from './components/pages/contacto/contacto.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EstudioyexperrienciaComponent } from './components/shared/estudioyexperriencia/estudioyexperriencia.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PreLoaderComponent,
     IconosTecnoComponent,
     ContactoComponent,
+    EstudioyexperrienciaComponent,
     ],
   imports: [
     BrowserModule,
