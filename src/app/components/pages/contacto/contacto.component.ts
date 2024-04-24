@@ -1,6 +1,8 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { gsap } from 'gsap';
+import emailjs from '@emailjs/browser';
+import * as Notiflix from 'notiflix';
 
 @Component({
   selector: 'app-contacto',
@@ -23,13 +25,32 @@ export class ContactoComponent implements OnInit {
     this._renderer.setStyle(document.body, 'overflow', 'hidden');
   }
 
-  onSubmit(event: Event) {
+  async onSubmit(event: Event) {
     event.preventDefault();
     if(this.checkoutForm.valid){
-      console.log(this.checkoutForm.value);
+      emailjs.init('oJlaFjFnpDXpjiK_h');
+
+      Notiflix.Loading.standard({
+        svgColor: "var(--color-secundario)"
+      });
+
+      let response = await emailjs.send("service_j5957il","template_7u30skw",{
+        from_name: this.checkoutForm.value.nombre,
+        from_email: this.checkoutForm.value.email,
+        message: this.checkoutForm.value.mensaje,
+      });
+
+      Notiflix.Loading.remove();
+
+      if (response.status === 200) {
+        Notiflix.Notify.success('¡Correo enviado con éxito!');
+        this.checkoutForm.reset();
+      } else {
+        Notiflix.Notify.failure('Error al enviar el correo. Por favor, inténtalo de nuevo más tarde.');
+      }
     }
     else{
-      console.log("Rellena todos los campos");
+      Notiflix.Notify.failure('Rellena todos los campos.');
     }
   }
 

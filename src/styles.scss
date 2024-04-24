@@ -28,7 +28,7 @@
 
 :root {
   --color-principal: #111111;
-  --color-blanco: white;
+  --color-blanco: #D1D1D1;
   --color-secundario: #fe520b;
 }
 
@@ -41,6 +41,7 @@ body {
   //margin-top: 80px; /* Asegura que el contenido no quede oculto detrás del header */
   padding: 20px;
 }
+
 body {
   background-color: var(--color-principal);
   margin: 0;
